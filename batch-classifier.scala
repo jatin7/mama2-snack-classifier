@@ -7,7 +7,7 @@ import org.apache.spark.mllib.tree.GradientBoostedTrees
 import org.apache.spark.mllib.tree.configuration.BoostingStrategy
 import org.apache.spark.mllib.tree.model.GradientBoostedTreesModel
 
-val data = sc.textFile("/user/<example>/cereal.dat")
+val data = sc.textFile("/user/<example>/snack.dat")
 val trainingData = data.map { line =>
   val parts = line.split('\t')
   LabeledPoint(parts(5).toDouble, Vectors.dense(parts.slice(0, 5).map(_.toDouble)))
